@@ -1,0 +1,29 @@
+body {
+  background: url("http://dbarthelemy.parseapp.com/image/background-bw.jpg") no-repeat center fixed;
+  background-size: cover;
+  -webkit-background-size: cover; /* pour Chrome et Safari */
+  -moz-background-size: cover; /* pour Firefox */
+  -o-background-size: cover; /* pour Opera */
+
+  position:relative;
+  top:64px;
+
+  font-family: helvetica;
+  text-align: center;
+  color: white;
+}
+
+p {
+  font-size: 22px;
+}
+
+input {
+  border: 0;
+  padding: 10px;
+  font-size: 18px;
+}
+
+input[type="submit"] {
+  background: red;
+  color: white;
+}
