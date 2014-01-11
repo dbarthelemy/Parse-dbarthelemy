@@ -5,12 +5,15 @@ body {
   -moz-background-size: cover; /* pour Firefox */
   -o-background-size: cover; /* pour Opera */
 
-  position:relative;
-  top:64px;
-
   font-family: helvetica;
   text-align: center;
   color: white;
+}
+
+img {
+  margin: 64px 0px 0px 0px;
+  border: 4px solid white;
+  border-radius: 100px;
 }
 
 p {
