@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "_default": {
+            "link": "dbarthelemy"
+        }, 
+        "dbarthelemy": {
+            "applicationId": "Your Key Here", 
+            "masterKey": "Your Key Here"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.15"
+    }
+}
