@@ -1,3 +1,10 @@
+//
+//  app.js
+//  dbarthelemy
+//
+//  Created by David Barthelemy on 21/05/15.
+//  Copyright (c) 2013 David Barthelemy, iMakeit4U. All rights reserved.
+//
 
 // These two lines are required to initialize Express in Cloud Code.
 var express = require('express');
@@ -26,24 +33,36 @@ app.post('/hello', function(req, res) {
     var Contact = Parse.Object.extend("Contact");
     var aContact = new Contact();
  
-	aContact.set("email", email);
+  	aContact.set("email", email);
  
-	aContact.save(null, {
+  	aContact.save(null, {
   	  success: function(aContact) {
         // Execute any logic that should take place after the object is saved.
+        Parse.Cloud.run('sendMail', { message: email }, {
+          success: function(result) {
+          },
+          error: function(error) {
+          }
+        });
+
+        highlight = 'Great!';
+        message = 'I\'ll come back to you as soon as possible';
+        res.render('hello', { highlight: highlight, message: message });
   	  },
   	  error: function(aContact, error) {
         // Execute any logic that should take place if the save fails.
         // error is a Parse.Error with an error code and description.
-        alert('Failed to create new object, with error code: ' + error.description);
-  	  }
-    });
-    
-    highlight = 'Great!';
-    message = 'I\'ll come back to you as soon as possible';
-  }
+        console.error('Failed to create new object, with error code: ' + error.description);
 
-  res.render('hello', { highlight: highlight, message: message });
+        highlight = 'Ooops!';
+        message = 'An error has occured... I\'ll fix that ASAP';
+        res.render('hello', { highlight: highlight, message: message });
+  	  }
+    });    
+  }
+  else {
+    res.render('hello', { highlight: highlight, message: message });
+  }
 });
 
 // // Example reading from the request query string of an HTTP get request.
