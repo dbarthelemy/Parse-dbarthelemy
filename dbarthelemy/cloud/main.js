@@ -7,11 +7,12 @@
 //
 
 require('cloud/app.js');
-var config = require('./config');
 
 Parse.Cloud.define("sendMail", function(request, response) {
+  var config = require('cloud/config.js');
   var Mandrill = require('mandrill');
-  Mandrill.initialize(config.mandrillKey);
+
+  Mandrill.initialize(config.mandrillKey());
 
   Mandrill.sendEmail({
     message: {
