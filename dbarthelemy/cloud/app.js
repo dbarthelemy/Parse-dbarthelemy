@@ -6,6 +6,12 @@
 //  Copyright (c) 2013 David Barthelemy, iMakeit4U. All rights reserved.
 //
 
+// Helper funcitons
+function validateEmail(email) { 
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+} 
+
 // These two lines are required to initialize Express in Cloud Code.
 var express = require('express');
 var app = express();
@@ -29,7 +35,7 @@ app.post('/hello', function(req, res) {
   var message = 'You did not enter a valid email... are you a bot?';
   var email = req.body.email;
 
-  if (email != '') { // FIXME: Check the email
+  if (validateEmail(email)) {
     var Contact = Parse.Object.extend("Contact");
     var aContact = new Contact();
  
