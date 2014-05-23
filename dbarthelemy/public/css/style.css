@@ -37,13 +37,13 @@ input[type="submit"] {
 
 footer {
   position: fixed;
-  bottom: 15px;
-  right: 15px;
+  bottom: 16px;
+  right: 16px;
 }
 
 .social {
   border-radius: 32px;
-  padding: 5px;
+  padding: 8px;
 }
 
 @media (max-width: 500px) {
