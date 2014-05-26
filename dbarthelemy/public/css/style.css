@@ -1,5 +1,7 @@
 body {
   background: url("http://dbarthelemy.parseapp.com/image/background.jpg") no-repeat center fixed;
+  background: -webkit-image-set( url(http://dbarthelemy.parseapp.com/image/background.jpg)    1x,
+                                 url(http://dbarthelemy.parseapp.com/image/background@2x.jpg) 2x);
   background-size: cover;
   -webkit-background-size: cover; /* pour Chrome et Safari */
   -moz-background-size: cover; /* pour Firefox */
