@@ -1,13 +1,14 @@
 body {
   background: url("http://dbarthelemy.parseapp.com/image/background.jpg") no-repeat center fixed;
   background: -webkit-image-set( url(http://dbarthelemy.parseapp.com/image/background.jpg)    1x,
-                                 url(http://dbarthelemy.parseapp.com/image/background@2x.jpg) 2x);
+                                 url(http://dbarthelemy.parseapp.com/image/background@2x.jpg) 2x)
+                                 no-repeat center fixed;
   background-size: cover;
   -webkit-background-size: cover; /* pour Chrome et Safari */
   -moz-background-size: cover; /* pour Firefox */
   -o-background-size: cover; /* pour Opera */
 
-  font-family: helvetica;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
   color: white;
 }
@@ -18,14 +19,27 @@ body {
   border-radius: 100px;
 }
 
+h1 {
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans serif;
+  font-size: xx-large;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #000000;
+}
+
 p {
-  font-size: 22px;
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-size: x-large;
+  font-style: italic;
+  text-shadow: 1px 1px 1px #000000;
 }
 
 input {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: large;
+  font-style: normal;
+
   border: 0;
   padding: 10px;
-  font-size: 18px;
 }
 
 input[type="email"] {
@@ -50,6 +64,12 @@ footer {
 
 @media (max-width: 500px) {
   h1 {
+    font-size: 120%;
+  }
+  p {
+    font-size: 100%;
+  }
+  input {
     font-size: 100%;
   }
 }
