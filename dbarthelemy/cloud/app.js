@@ -83,5 +83,25 @@ app.post('/hello', function(req, res) {
 //   res.send(req.body.message);
 // });
 
+// Custom 404 handling
+app.use(function(req, res){
+  if (req.accepts('html')) {
+    // respond with html page
+    highlight = 'Ooops! this page no longer exists';
+    res.render('404', { highlight: highlight, message: req.url });
+    return;
+  }
+  else if (req.accepts('json')) {
+    // respond with json
+    res.status(404);
+    res.send({ error: 'Not found' });
+    return;
+  }
+  else {
+    // default to plain-text. send()
+    res.type('txt').send('Not found');
+  }
+});
+
 // Attach the Express app to Cloud Code.
 app.listen();

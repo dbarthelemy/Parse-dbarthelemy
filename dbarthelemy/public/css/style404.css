@@ -1,0 +1,10 @@
+body {
+  background: url("http://dbarthelemy.parseapp.com/image/background-bw.jpg") no-repeat center fixed;
+  background: -webkit-image-set( url(http://dbarthelemy.parseapp.com/image/background-bw.jpg)    1x,
+                                 url(http://dbarthelemy.parseapp.com/image/background-bw@2x.jpg) 2x)
+                                 no-repeat center fixed;
+  background-size: cover;
+  -webkit-background-size: cover; /* pour Chrome et Safari */
+  -moz-background-size: cover; /* pour Firefox */
+  -o-background-size: cover; /* pour Opera */
+}
